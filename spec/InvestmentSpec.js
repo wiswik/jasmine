@@ -41,11 +41,22 @@ describe("주식투자는", function() { // jasmine global function
         });
 
         it("우량 투자다", function(){
-            expect(investment.isGood()).toBeTruthy();
-            // expect(investment).toBeAGoodInvestment(); // TypeError :undefined is not a function...
+             expect(investment.isGood()).toBeTruthy();
+            //expect(investment).toBeAGoodInvestment(); // TypeError :undefined is not a function...
         });
 
     }); // end 주가가 상승하면
+
+    describe("주가가 하락하면 ", function() {
+        beforeEach(function(){
+            stock.sharePrice=0;
+        });
+
+        it("불량 투자다", function(){
+             // expect(investment.not.isGood()).toBeTruthy();
+        });
+
+    }); // 주가가 하락하면
 
 
 
